@@ -1,0 +1,27 @@
+main:
+    saved_dir: 'path-to-saved-directory'
+    loaded_path: 'path-to-model-checkpoint'
+
+net:
+    name: 'DenseHighRes3DNet'
+    kwargs:
+        in_channels: 1
+        out_channels: 2
+
+metrics:
+    - name: 'Dice'
+
+predictor:
+    name: 'VIPCUPSegPredictor'
+    kwargs:
+        data_dir: 'path-to-processed-data'
+        data_split_csv: 'path-to-data-split-csv-file'
+        preprocessings:
+          - name: 'Normalize'
+        transforms:
+          - name: 'ToTensor'
+        sample_size: [192, 192, 48]
+        shift: [180, 180, 40]
+        device: 'cuda:0'
+        saved_dir: 'path-to-saved-prediction-directory'
+        exported: true
