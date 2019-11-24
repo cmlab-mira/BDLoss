@@ -20,6 +20,7 @@ wget -O ./VIPCUPData.zip "https://gntuedutw-my.sharepoint.com/:u:/g/personal/r07
 
 ### Kits 2019
 website: https://kits19.grand-challenge.org/
+
 You need to download the data from the official github repo and run `kits_preprocessing.py`
 ```
 python -m src.kits_preprocessing DATA_PATH SAVED_DATA_PATH ./src/kits_data_split.csv
